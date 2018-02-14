@@ -1,6 +1,6 @@
-package com.immutables.generics.noimmutables;
+package com.smc.immutables.generics.noimmutables;
 
-import com.immutables.generics.TicketId;
+import com.smc.immutables.generics.TicketId;
 
 public class TicketItem<E extends TicketId> {
 

@@ -44,9 +44,9 @@ atlassian-ide-plugin.xml
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
+crashlytics.com.smc.properties
+crashlytics-build.com.smc.properties
+fabric.com.smc.properties
 
 # Eclipse
 .classpath

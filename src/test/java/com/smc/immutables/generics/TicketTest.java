@@ -1,6 +1,6 @@
-package com.immutables.generics;
+package com.smc.immutables.generics;
 
-import com.immutables.generics.noimmutables.TicketItem;
+import com.smc.immutables.generics.noimmutables.TicketItem;
 import org.junit.Assert;
 import org.junit.Test;
 

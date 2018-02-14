@@ -1,6 +1,6 @@
-package com.immutables.generics.withimmutables;
+package com.smc.immutables.generics.withimmutables;
 
-import com.immutables.generics.TicketId;
+import com.smc.immutables.generics.TicketId;
 import org.immutables.value.Value;
 
 @Value.Immutable

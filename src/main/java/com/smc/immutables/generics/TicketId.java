@@ -1,4 +1,4 @@
-package com.immutables.generics;
+package com.smc.immutables.generics;
 
 public interface TicketId {
 
