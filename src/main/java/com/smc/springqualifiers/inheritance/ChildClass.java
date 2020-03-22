@@ -1,10 +1,10 @@
-package com.smc.springqualifiers;
+package com.smc.springqualifiers.inheritance;
 
 public class ChildClass extends ParentClass {
 
     public ChildClass() {
         super();
-        System.out.println("A new ChildClass object is created");
+        System.out.println("A new ChildClass object '" + super.id + "' is created");
     }
 
     @Override

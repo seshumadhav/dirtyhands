@@ -1,8 +1,10 @@
 package com.smc;
 
 import com.smc.config.AppConfigForSpringQualifiersAndBeanNames;
-import com.smc.springqualifiers.ChildClass;
-import com.smc.springqualifiers.ParentClass;
+import com.smc.springqualifiers.iinterface.IInterface;
+import com.smc.springqualifiers.iinterface.IInterfaceImpl;
+import com.smc.springqualifiers.inheritance.ChildClass;
+import com.smc.springqualifiers.inheritance.ParentClass;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.Arrays;
@@ -25,9 +27,23 @@ public class Main {
         applicationContext = new AnnotationConfigApplicationContext(AppConfigForSpringQualifiersAndBeanNames.class);
         displayAllBeans();
 
-        ParentClass pc1 = (ParentClass) applicationContext.getBean("foobar");
         System.out.println("\n\n--Real business starts now");
+
+        ParentClass pc1 = (ParentClass) applicationContext.getBean("foobar");
+        System.out.println("Bean with ID: '" + pc1.id + "' was allotted by Spring");
         pc1.run();
+
+//        ChildClass cc1 = (ChildClass) applicationContext.getBean("foobar");
+//        System.out.println("Bean with ID: '" + cc1.id + "' was allotted by Spring");
+//        cc1.run();
+
+//        ChildClass cc2 = (ChildClass) applicationContext.getBean(ChildClass.class);
+//        System.out.println("Bean with ID: '" + cc2.id + "' was allotted by Spring");
+//        cc2.run();
+
+        IInterface i = (IInterface) applicationContext.getBean("bazz");
+        System.out.println("Bean with ID: '" + i.getId() + "' was allotted by Spring");
+        i.run();
 
     }
 
@@ -43,5 +59,12 @@ public class Main {
 
         System.out.println("\n\n---All Beans of type ChildClass: ");
         Arrays.asList(applicationContext.getBeanNamesForType(ChildClass.class)).forEach(System.out::println);
+
+        System.out.println("\n\n---All Beans of type IInterface: ");
+        Arrays.asList(applicationContext.getBeanNamesForType(IInterface.class)).forEach(System.out::println);
+
+        System.out.println("\n\n---All Beans of type IInterfaceImpl: ");
+        Arrays.asList(applicationContext.getBeanNamesForType(IInterfaceImpl.class)).forEach(System.out::println);
+
     }
 }
